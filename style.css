@@ -11,7 +11,7 @@ body{
     position: relative;
     min-height: 100vh;
     width: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .sidebar{
@@ -282,7 +282,7 @@ body{
     margin: 5px;
     top: 20px;
 }
-.home_content div span{
+.home_content .good span{
     opacity: 0;
     color: #fff;
     position: absolute;
@@ -296,7 +296,7 @@ body{
     transition: all 0.5s ease;
 }
 
-.home_content div span:hover{
+.home_content .good span:hover{
   transition: all 0.5s ease;
   opacity: 1;
 }
@@ -310,6 +310,52 @@ body{
     width: calc(100% - 240px);
     left: 240px;
     transition: all 0.5s ease;
+}
+
+.home_content .order{
+    position: fixed;
+    left: 550px;
+    top: 70px;
+    background-color: black;
+    width: 400px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    display: none;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.home_content .order .info img{
+    position: absolute;
+    left: 30px;
+    width: 200px;
+    height: 150px;
+}
+
+.home_content .order .info span{
+    position: absolute;
+    color: #fff;
+    font-size: 35px;
+    top: 100px;
+    left: 270px;
+}
+
+.home_content .order .num{
+    position: absolute;
+    width: 200px;
+    height: 30px;
+    top: 250px;
+    left: 30px;
+}
+
+.home_content .order .orderbtn{
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    bottom: 220px;
+    left: 270px;
 }
 
 .frm
