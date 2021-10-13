@@ -10,6 +10,11 @@ let imgsrc = ["brade.png", "burge.png", "chinese nodle.png", "Dumpling.png"
 
 window.onload = function () {
     order.style.display = "none";
+    setTimeout(() => {
+        for (var i = 0; i < 8; i++) {
+            new Image().src = imgsrc[i];
+        }
+    }, 1000);
 }
 
 for (var i = 0; i < good.length; i++) {
