@@ -11,7 +11,7 @@ body{
     position: relative;
     min-height: 100vh;
     width: 100%;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .sidebar{
@@ -23,11 +23,13 @@ body{
     background: #11101d;
     padding: 6px 14px;
     transition: all 0.5s ease;
+    z-index: 99;
 }
 
 .sidebar.active{
     transition: all 0.5s ease;
     width: 240px;
+    z-index: 99;
 }
 
 .sidebar .logo_content .logo{
@@ -266,18 +268,42 @@ body{
 }
 
 .home_content{
-    position: absolute;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
     height: 100%;
     width: calc(100% - 78px);
     left: 78px;
     transition: all 0.5s ease;
 }
 
-.home_content .text{
-    font-size: 25px;
-    font-weight: 500;
-    color: #1d1b31;
-    margin: 12px;
+.home_content div{
+    position: relative;
+    margin: 5px;
+    top: 20px;
+}
+.home_content div span{
+    opacity: 0;
+    color: #fff;
+    position: absolute;
+    box-sizing: border-box;
+    background-color: rgba(0,0,0,.3);
+    right: 0.5px;
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    line-height: 170px;
+    transition: all 0.5s ease;
+}
+
+.home_content div span:hover{
+  transition: all 0.5s ease;
+  opacity: 1;
+}
+
+.home_content img{
+    width: 300px;
+    height: 200px;
 }
 
 .sidebar.active ~ .home_content{

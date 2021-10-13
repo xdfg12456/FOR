@@ -1,6 +1,14 @@
 let btn = document.querySelector("#btn");
 let sidebar = document.querySelector(".sidebar");
 let searchBtn = document.querySelector(".bx-search");
+let good = document.querySelectorAll(".good");
+
+for (var i = 0; i < good.length; i++) {
+    good[i].onclick = function () {
+        prompt(this.getAttribute("value"));
+    }
+}
+
 
 btn.onclick = function () {
     sidebar.classList.toggle("active");
