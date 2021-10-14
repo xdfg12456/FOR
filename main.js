@@ -5,8 +5,11 @@ let good = document.querySelectorAll(".good");
 let order = document.querySelector(".order");
 let home_content = document.querySelector(".home_content");
 let orderimg = document.querySelector(".orderimg");
+let ordername = document.querySelector(".ordername");
 let imgsrc = ["brade.png", "burge.png", "chinese nodle.png", "Dumpling.png"
     , "fire.png", "japan rice.png", "koera rice.png", "lame.png"]
+let orderpeice = [];
+let ordernames = ["麵包", "漢堡", "螺獅粉", "水餃", "火鍋", "丼飯", "石鍋拌飯", "拉麵"];
 
 window.onload = function () {
     order.style.display = "none";
@@ -26,6 +29,7 @@ for (var i = 0; i < good.length; i++) {
             }, 14);
         }
         orderimg.src = imgsrc[this.getAttribute("value")];
+        ordername.innerHTML = ordernames[this.getAttribute("value")];
     }
 }
 
