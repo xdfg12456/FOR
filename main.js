@@ -36,7 +36,9 @@ for (var i = 0; i < good.length; i++) {
 document.addEventListener("click", clickhidden);
 
 function clickhidden(event) {
-    if (event.target.classList[0] != "order" && event.target.classList[0] != "goodname" && event.target.classList[0] != "price" && event.target.classList[0] != "orderbtn" && event.target.classList[0] != "orderimg" && event.target.classList[0] != "num") {
+    if (event.target.classList[0] != "order" && event.target.classList[0] != "goodname" && event.target.classList[0] != "price"
+        && event.target.classList[0] != "orderbtn" && event.target.classList[0] != "orderimg" && event.target.classList[0] != "num"
+        && event.target.classList[0] != "ordername") {
         order.style.opacity = 0;
         setTimeout(() => {
             order.style.display = "none";
@@ -55,6 +57,10 @@ searchBtn.onclick = function () {
 
 function newaccount() {
     window.location.href = 'sign.html';
+}
+
+function jumplog() {
+    window.location.href = 'log.html';
 }
 
 function SubmitFormData() {

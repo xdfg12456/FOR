@@ -95,23 +95,13 @@
             </div>
         </div>
     </div>
-    <div class="home_content">
-        <div class="frm">
-            <form id="myForm" action="signprocess.php" method="POST">
-                <p>
-                    <label>Username:</label>
-                    <input type="text" id="user" class="user" name="user">
-                </p>
-                <p>
-                    <label>Password :</label>
-                    <input type="text" id="pass" class="pass" name="pass">
-                </p>
-                <p>
-                    <input type="button" class="signbtn" value="SignIn">
-                </p>
-            </form>
-            <div id="result"></div>
-        </div>
+    <div class="home_content_log">
+        <form id="myForm" action="signprocess.php" method="POST">
+            <input type="text" id="user" class="user" name="user" placeholder="Username">
+            <input type="text" id="pass" class="pass" name="pass" placeholder="Password">
+            <input type="button" class="logbtn" value="Sign In">
+            <a href="log.html" id="sign">log</a>
+        </form>
     </div>
 
     <script src="main.js"></script>

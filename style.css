@@ -7,9 +7,13 @@
     font-family: "Poppins",sans-serif;
 }
 
+html{
+    height: 100%;
+}
+
 body{
     position: relative;
-    min-height: 100vh;
+    height: 100%;
     width: 100%;
     overflow-y: scroll;
 }
@@ -277,11 +281,45 @@ body{
     transition: all 0.5s ease;
 }
 
-.home_content div{
+.home_content.main_page{
+    background:linear-gradient(to top,#004B97,#003060);
+}
+
+.home_content.main_page .text{
+    -webkit-text-stroke: 0.5px #019858;
+    font-size: 100px;
+    color:#1d1b31;
     position: relative;
-    margin: 5px;
+    left: calc(50% - 178px);
+    top: 20%;
+}
+
+.home_content.main_page .jump_log{
+    position: absolute;
+    height: 70px;
+    width: 200px;
+    top: 40%;
+    left: calc(50% - 78px);
+    background-color: black;
+    border: 2px solid red;
+    border-radius: 60px;
+    color: #fff;
+    font-size: 30px;
+    transition: 0.5s;
+}
+
+.home_content_main_page .jump_log:hover{
+    background-color: white;
+    color: black;
+    transition: 0.5s;
+}
+
+.home_content .good{
+    position: relative;
+    margin: 5px 20px;
     top: 20px;
 }
+
 .home_content .good span{
     opacity: 0;
     color: #fff;
@@ -315,8 +353,8 @@ body{
 
 .home_content .order{
     position: fixed;
-    left: 550px;
-    top: 70px;
+    left: calc(50% - 200px);
+    top: 10%;
     background-color: black;
     width: 400px;
     height: 500px;
@@ -330,6 +368,7 @@ body{
 
 .home_content .order .info img{
     position: absolute;
+    top: 30px;
     left: 30px;
     width: 200px;
     height: 150px;
@@ -339,7 +378,7 @@ body{
     position: absolute;
     color: #fff;
     font-size: 35px;
-    top: 100px;
+    top: 120px;
     left: 270px;
 }
 
@@ -352,7 +391,7 @@ body{
     height: 70px;
     line-height: 70px;
     text-align: center;
-    top: 10px;
+    top: 20px;
     left: 260px;
 }
 
@@ -360,9 +399,10 @@ body{
     position: absolute;
     width: 100px;
     height: 30px;
-    top: 250px;
-    background-color: black;
-    border: 2px solid #fff;
+    top: 290px;
+    background: none;
+    border: 3px solid #fff;
+    outline: none;
     color: #fff;
     padding: 10px;
     font-size: 18px;
@@ -386,57 +426,88 @@ body{
     font-size: 18px;
     width: 100px;
     height: 30px;
-    bottom: 220px;
+    bottom: 178px;
     left: 270px;
     transition: all 0.5s;
 }
 
 .home_content .order .orderbtn:hover{
-    background-color:#fff;
-    color:black;
+    background-color:#4169e1;
 }
 
-.frm
-{
-    border: solid gray 1px;
-    width: 270px;
-    height: 200px;
+.home_content.log{
+    background:linear-gradient(to top,#004B97,#003060);
+}
+
+.home_content.log #myForm{
+    position: relative;
     display: flex;
     flex-wrap: wrap;
-    border-radius: 5px;
-    margin: 100px auto;
-    background: #13097a;
-    color:#fff;
-    padding: 50px;
+    background: none;
+    width: 300px;
+    height: 300px;
+    top: calc(40% - 150px);
+    left: calc(50% - 150px);
 }
 
-.logbtn
-{
-    border-radius: 5px;
-    color: rgb(0, 0, 0);
-    background: #fff;
-    padding: 5px;
+.home_content.log #myForm .user{
     position: relative;
-    top: 20px;
-    margin-left: 69%;
+    height: 50px;
+    width: 200px;
+    padding: 15px;
+    background: none;
+    outline: none;
+    border: 3px solid #AE0000;
+    border-radius: 24px;
+    font-size: 20px;
+    color: #2894FF;
 }
 
-#sign
-{
-    border-radius: 4px;
-    color: rgb(0, 0, 0);
-    background: #fff;
+.home_content.log #myForm .pass{
     position: relative;
-    bottom: 5px;
-    width: 40px;
-    height: 25px;
+    height: 50px;
+    width: 200px;
+    padding: 15px;
+    background: none;
+    outline: none;
+    border: 3px solid #AE0000;
+    border-radius: 24px;
+    font-size: 20px;
+    bottom: 30px;
+    color: #2894FF;
 }
 
-#result
-{
+.home_content.log #myForm .logbtn{
     position: relative;
+    height: 45px;
+    width: 100px;
+    right: 50%;
     top: 35px;
-    right: 50px;
+    background: none;
+    outline: none;
+    border: 3px solid #AE0000;
+    border-radius: 24px;
+    font-size: 20px;
+    color: #2894FF;
+    transition: 0.5s;
+}
+
+.home_content.log #myForm .logbtn:hover{
+    background: #fff;
+    color: black;
+    transition: 0.5s;
+}
+
+.home_content.log #myForm #sign{
+    position: relative;
+    height: 30px;
+    width: 100px;
+    outline: none;
+    background: none;
+    border: none;
+    left: 50%;
+    font-size: 15px;
+    color: #2894FF;
 }
 
 .signbtn
