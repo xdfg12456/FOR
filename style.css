@@ -308,7 +308,7 @@ body{
     transition: 0.5s;
 }
 
-.home_content_main_page .jump_log:hover{
+.home_content.main_page .jump_log:hover{
     background-color: white;
     color: black;
     transition: 0.5s;
@@ -364,6 +364,14 @@ body{
     display: none;
     opacity: 0;
     transition: all 0.5s ease;
+}
+
+.home_content .order.ready{
+    opacity: 1;
+    display: block;
+    overflow-y: scroll;
+    background: #fff;
+    border: 5px solid #FF359A;
 }
 
 .home_content .order .info img{
@@ -435,6 +443,26 @@ body{
     background-color:#4169e1;
 }
 
+.home_content .bx-cart{
+    position: fixed;
+    font-size: 50px;
+    text-align: left;
+    padding: 10px;
+    background: #FF359A;
+    width: 70px;
+    height: 70px;
+    border-radius: 40px;
+    left: calc(100% - 90px);
+    top: calc(100% - 90px);
+    transition: 0.5s;
+}
+
+.home_content .bx-cart:hover{
+    background: #11101d;
+    color: #fff;
+    transition: 0.5s;
+}
+
 .home_content.log{
     background:linear-gradient(to top,#004B97,#003060);
 }
@@ -443,8 +471,11 @@ body{
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    background: none;
-    width: 300px;
+    border-radius: 20px;
+    border: 2px solid #11101d;
+    justify-content: center;
+    align-content: flex-start;
+    width: 250px;
     height: 300px;
     top: calc(40% - 150px);
     left: calc(50% - 150px);
@@ -455,6 +486,7 @@ body{
     height: 50px;
     width: 200px;
     padding: 15px;
+    margin: 15px;
     background: none;
     outline: none;
     border: 3px solid #AE0000;
@@ -468,12 +500,12 @@ body{
     height: 50px;
     width: 200px;
     padding: 15px;
+    margin: 15px;
     background: none;
     outline: none;
     border: 3px solid #AE0000;
     border-radius: 24px;
     font-size: 20px;
-    bottom: 30px;
     color: #2894FF;
 }
 
@@ -481,8 +513,7 @@ body{
     position: relative;
     height: 45px;
     width: 100px;
-    right: 50%;
-    top: 35px;
+    margin: 15px;
     background: none;
     outline: none;
     border: 3px solid #AE0000;
@@ -499,13 +530,14 @@ body{
 }
 
 .home_content.log #myForm #sign{
-    position: relative;
+    position: absolute;
     height: 30px;
     width: 100px;
     outline: none;
     background: none;
     border: none;
-    left: 50%;
+    left: calc(100% - 50px);
+    top: calc(100% - 30px);
     font-size: 15px;
     color: #2894FF;
 }

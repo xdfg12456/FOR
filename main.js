@@ -36,6 +36,7 @@ for (var i = 0; i < good.length; i++) {
 document.addEventListener("click", clickhidden);
 
 function clickhidden(event) {
+    console.log(event.target.classList[0]);
     if (event.target.classList[0] != "order" && event.target.classList[0] != "goodname" && event.target.classList[0] != "price"
         && event.target.classList[0] != "orderbtn" && event.target.classList[0] != "orderimg" && event.target.classList[0] != "num"
         && event.target.classList[0] != "ordername") {
