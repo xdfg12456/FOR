@@ -134,13 +134,22 @@
                 <span class="price">$:100</span>
                 <span class="ordername">test</span>
             </div>
-            <input type="text" class="num" placeholder="數量"></input>
-            <input type="button" class="orderbtn" value="送出"></input>
+            <input type="number" class="num" value="0"></input>
+            <input type="button" class="orderbtn" value="送出" onclick="addGoodInOrder()"></input>
         </div>
         <i class='bx bx-cart'></i>
-        <form action="" class="order ready">
-
-        </form>
+        <div class="order_ready">
+            <table cellspacing="0" class="orderlist">
+                <tr class="ordertitle">
+                    <th colspan="3">User</th>
+                </tr>
+                <tr>
+                    <th>商品</th>
+                    <th>數量</th>
+                    <th>價錢</th>
+                </tr>
+            </table>
+        </div>
     </div>
 
     <script src="main.js"></script>
