@@ -134,19 +134,25 @@
                 <span class="price">$:100</span>
                 <span class="ordername">test</span>
             </div>
-            <input type="number" class="num" value="0"></input>
+            <input type="number" class="num" value="0" min="0"></input>
             <input type="button" class="orderbtn" value="送出" onclick="addGoodInOrder()"></input>
         </div>
         <i class='bx bx-cart'></i>
         <div class="order_ready">
-            <table cellspacing="0" class="orderlist">
+            <table class="orderlist">
                 <tr class="ordertitle">
                     <th colspan="3">User</th>
                 </tr>
                 <tr>
-                    <th>商品</th>
-                    <th>數量</th>
-                    <th>價錢</th>
+                    <td>商品</td>
+                    <td>數量</td>
+                    <td>價錢</td>
+                </tr>
+                <tr class="total">
+                    <td colspan="2">總價</td>
+                    <td>
+                        <p class="goodtotalprice"></p>
+                    </td>
                 </tr>
             </table>
         </div>

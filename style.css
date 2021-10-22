@@ -574,3 +574,21 @@ th{
     font-size: 30px;
     padding: 10px;
 }
+
+td{
+    font-size: 20px;
+}
+
+.home_content .order_ready .orderlist .goodnum{
+    width: 40px;
+    font-size: 20px;
+    padding-left: 6px;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+.home_content .order_ready .orderlist .total{
+    border-top: 2px solid #11101d;
+}

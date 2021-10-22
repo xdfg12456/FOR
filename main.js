@@ -11,6 +11,7 @@ let order_ready = document.querySelector(".order_ready");
 let orderlist = document.querySelector(".orderlist");
 let orderbtn = document.querySelector(".orderbtn");
 let inputnum = document.querySelector(".num");
+let totalprice = document.querySelector(".goodtotalprice");
 let goodprice = document.querySelector(".price");
 let imgsrc = ["brade.png", "burge.png", "chinese nodle.png", "Dumpling.png"
     , "fire.png", "japan rice.png", "koera rice.png", "lame.png"]
@@ -19,7 +20,9 @@ let ordernames = ["麵包", "漢堡", "螺獅粉", "水餃", "火鍋", "丼飯",
 let goodprices = [50, 130, 100, 80, 120, 150, 140, 190];
 let ordernum = 1;
 let currentgood;
+let currentmoney = 0;
 window.onload = function () {
+    totalprice.innerHTML = currentmoney;
     setTimeout(() => {
         for (var i = 0; i < 8; i++) {
             new Image().src = imgsrc[i];
@@ -38,12 +41,35 @@ for (var i = 0; i < good.length; i++) {
     }
 }
 
+
+
+function updataValue(event) {
+    if (event.target.value == 0) {
+        let del = confirm("是否取消項目");
+        if (del) {
+            currentmoney -= parseInt(event.target.parentElement.nextElementSibling.innerHTML);
+            totalprice.innerHTML = currentmoney;
+            let row = event.target.parentElement.parentElement.rowIndex;
+            orderlist.deleteRow(row);
+            ordernum -= 1;
+            return;
+        }
+        else
+            event.target.value = 1;
+    }
+    currentmoney -= parseInt(event.target.parentElement.nextElementSibling.innerHTML);
+    event.target.parentElement.nextElementSibling.innerHTML = event.target.value * goodprices[ordernames.indexOf(event.target.parentElement.previousElementSibling.innerHTML)];
+    currentmoney += parseInt(event.target.parentElement.nextElementSibling.innerHTML);
+    totalprice.innerHTML = currentmoney;
+}
+
 function addGoodInOrder() {
     if (inputnum.value != 0) {
         ordernum += 1;
         let temp = orderlist.insertRow(ordernum);
-        temp.innerHTML = "<td>" + ordernames[currentgood] + "</td>" + "<td>" + inputnum.value + "</td>" + "<td>" + inputnum.value * goodprices[currentgood] + "</td>";
+        temp.innerHTML = `<td>${ordernames[currentgood]}</td>` + `<td><input type="number" class="goodnum" value="${inputnum.value}"></td>` + `<td>${inputnum.value * goodprices[currentgood]}</td>`;
         order.classList.toggle("active");
+        currentmoney += inputnum.value * goodprices[currentgood];
         inputnum.value = 0;
     }
 }
@@ -68,6 +94,11 @@ btn.onclick = function () {
 
 ordercart.onclick = function () {
     order_ready.classList.toggle("active");
+    let goodnum = document.querySelectorAll(".goodnum");
+    for (var i = 0; i < goodnum.length; i++) {
+        goodnum[i].addEventListener("change", updataValue);
+    }
+    totalprice.innerHTML = currentmoney;
 }
 
 searchBtn.onclick = function () {
