@@ -13,6 +13,7 @@ let orderbtn = document.querySelector(".orderbtn");
 let inputnum = document.querySelector(".num");
 let totalprice = document.querySelector(".goodtotalprice");
 let goodprice = document.querySelector(".price");
+let tr = document.querySelectorAll("tr")
 let imgsrc = ["brade.png", "burge.png", "chinese nodle.png", "Dumpling.png"
     , "fire.png", "japan rice.png", "koera rice.png", "lame.png"]
 let orderpeice = [];
@@ -64,14 +65,33 @@ function updataValue(event) {
 }
 
 function addGoodInOrder() {
+    tr = document.querySelectorAll("tr");
     if (inputnum.value != 0) {
-        ordernum += 1;
-        let temp = orderlist.insertRow(ordernum);
-        temp.innerHTML = `<td>${ordernames[currentgood]}</td>` + `<td><input type="number" class="goodnum" value="${inputnum.value}"></td>` + `<td>${inputnum.value * goodprices[currentgood]}</td>`;
-        order.classList.toggle("active");
-        currentmoney += inputnum.value * goodprices[currentgood];
-        inputnum.value = 0;
+        let tr_i = findsame();
+        if (tr_i != -1) {
+            tr[tr_i].getElementsByTagName("td")[1].getElementsByTagName("input")[0].value = parseInt(tr[tr_i].getElementsByTagName("td")[1].getElementsByTagName("input")[0].value) + parseInt(inputnum.value);
+            tr[tr_i].getElementsByTagName("td")[2].innerHTML = parseInt(tr[tr_i].getElementsByTagName("td")[2].innerHTML) + inputnum.value * goodprices[currentgood];
+            currentmoney += inputnum.value * goodprices[currentgood];
+            order.classList.toggle("active");
+            inputnum.value = 0;
+        } else {
+            ordernum += 1;
+            let temp = orderlist.insertRow(ordernum);
+            temp.innerHTML = `<td>${ordernames[currentgood]}</td>` + `<td><input type="number" class="goodnum" value="${inputnum.value}"></td>` + `<td>${inputnum.value * goodprices[currentgood]}</td>`;
+            order.classList.toggle("active");
+            currentmoney += inputnum.value * goodprices[currentgood];
+            inputnum.value = 0;
+        }
     }
+}
+
+function findsame() {
+    for (let i = 2; i < tr.length - 1; i++) {
+        if (tr[i].getElementsByTagName("td")[0].innerHTML == ordernames[currentgood]) {
+            return i;
+        }
+    }
+    return -1;
 }
 
 document.addEventListener("click", clickhidden);
